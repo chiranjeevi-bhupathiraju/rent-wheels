@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 export const metadata = {
   title: "RentWheels",
   description: "Browse cars, bikes and more with RentWheels.",
@@ -13,7 +14,10 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="overflow-y-scroll font-sans">{children}</body>
+      <body className="overflow-y-scroll font-sans">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
